@@ -22,3 +22,13 @@ presented
 - The user should get the ability to refresh the data
 - On the next page is a mockup for the small weather application
 - Weather icons are available at https://openweathermap.org/weather-conditions
+- Bonus: allow to search for a city
+For the backend following JSON rest API will be used:
+- The API documentation can be found here: https://openweathermap.org/api
+- The used access key for the API is 9170e0e85794088df319259526c55afd
+- Please use the API responsibly and keep in mind that excessive or misuse can lead to
+temporary blockages
+- If your key gets temporarily blocked, please get in touch with us and you can get another key
+- Under the link the usage and samples can be found
+- Bonus: use the small city meta data https://www.weatherbit.io/api/meta (the one with
+~20,000 cities) for the city search
