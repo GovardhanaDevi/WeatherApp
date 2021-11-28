@@ -13,11 +13,14 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     private let refreshControl = UIRefreshControl()
     private let viewModel: WeatherViewModelProtocol = WeatherViewModel()
+    private let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constants.appTitle
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        activityIndicator.center = CGPoint(x: view.bounds.size.width/2, y: view.bounds.size.height/2)
+        view.addSubview(activityIndicator)
         setUpTableView()
         refresh()
     }
@@ -38,9 +41,11 @@ class WeatherViewController: UIViewController {
     @objc private func refresh() {
         guard let selectedCity = segmentControl.titleForSegment(at: segmentControl.selectedSegmentIndex) else
         { return }
-        viewModel.getData(city: selectedCity) { [tableView, refreshControl] in
-            tableView?.reloadData()
-            refreshControl.endRefreshing()
+        activityIndicator.startAnimating()
+        viewModel.getData(city: selectedCity) { [weak self] in
+            self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
+            self?.activityIndicator.stopAnimating()
         }
     }
 }
