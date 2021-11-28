@@ -24,6 +24,8 @@
 		489D65F42753DD6600ED8668 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D65F32753DD6600ED8668 /* Extensions.swift */; };
 		489D65F72753DE7F00ED8668 /* HoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D65F52753DE7F00ED8668 /* HoursTableViewCell.swift */; };
 		489D65F82753DE7F00ED8668 /* HoursTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489D65F62753DE7F00ED8668 /* HoursTableViewCell.xib */; };
+		489D65FC2753E29E00ED8668 /* DaysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D65FA2753E29E00ED8668 /* DaysTableViewCell.swift */; };
+		489D65FD2753E29E00ED8668 /* DaysTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 489D65FB2753E29E00ED8668 /* DaysTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		489D65F32753DD6600ED8668 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		489D65F52753DE7F00ED8668 /* HoursTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursTableViewCell.swift; sourceTree = "<group>"; };
 		489D65F62753DE7F00ED8668 /* HoursTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HoursTableViewCell.xib; sourceTree = "<group>"; };
+		489D65FA2753E29E00ED8668 /* DaysTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTableViewCell.swift; sourceTree = "<group>"; };
+		489D65FB2753E29E00ED8668 /* DaysTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,8 @@
 			children = (
 				489D65F52753DE7F00ED8668 /* HoursTableViewCell.swift */,
 				489D65F62753DE7F00ED8668 /* HoursTableViewCell.xib */,
+				489D65FA2753E29E00ED8668 /* DaysTableViewCell.swift */,
+				489D65FB2753E29E00ED8668 /* DaysTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -225,6 +231,7 @@
 				489D65E82753D42A00ED8668 /* cities_20000.csv in Resources */,
 				489D65F82753DE7F00ED8668 /* HoursTableViewCell.xib in Resources */,
 				489D65D52753D1B000ED8668 /* LaunchScreen.storyboard in Resources */,
+				489D65FD2753E29E00ED8668 /* DaysTableViewCell.xib in Resources */,
 				489D65D22753D1B000ED8668 /* Assets.xcassets in Resources */,
 				489D65D02753D1AE00ED8668 /* Main.storyboard in Resources */,
 				489D65F12753DBA600ED8668 /* HourCollectionViewCell.xib in Resources */,
@@ -248,6 +255,7 @@
 				489D65E12753D35D00ED8668 /* WeatherModel.swift in Sources */,
 				489D65F02753DBA600ED8668 /* HourCollectionViewCell.swift in Sources */,
 				489D65ED2753D7E100ED8668 /* Constants.swift in Sources */,
+				489D65FC2753E29E00ED8668 /* DaysTableViewCell.swift in Sources */,
 				489D65F72753DE7F00ED8668 /* HoursTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

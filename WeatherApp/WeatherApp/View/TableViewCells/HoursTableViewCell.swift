@@ -47,6 +47,4 @@ extension HoursTableViewCell: UICollectionViewDataSource {
         cell.configure(with: hourData)
         return cell
     }
-    
-    
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     private let refreshControl = UIRefreshControl()
@@ -28,7 +28,9 @@ class WeatherViewController: UIViewController {
 
     private func setUpTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(DaysTableViewCell.registerNib(), forCellReuseIdentifier: DaysTableViewCell.reuseIdentifier)
         tableView.register(HoursTableViewCell.registerNib(), forCellReuseIdentifier: HoursTableViewCell.reuseIdentifier)
         tableView.addSubview(refreshControl)
     }
@@ -44,7 +46,6 @@ class WeatherViewController: UIViewController {
 }
 
 extension WeatherViewController: UITableViewDataSource {
-
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
@@ -63,8 +64,31 @@ extension WeatherViewController: UITableViewDataSource {
             cell.configure(with: hourlyData)
             return cell
         }
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DaysTableViewCell.reuseIdentifier,
+                                                       for: indexPath) as? DaysTableViewCell,
+              let dayData = viewModel.getDailyData(for: indexPath.row) else {
+            return UITableViewCell()
+        }
+        cell.tag = indexPath.row
+        cell.configure(with: dayData)
+        
+        return cell
     }
-    
 }
 
+extension WeatherViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 56
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 56))
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 16, width: tableView.frame.width, height: 40))
+        titleLabel.text = viewModel.getSectionTitle(for: section)
+        titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        titleLabel.textColor = .white
+        headerView.addSubview(titleLabel)
+        return headerView
+    }
+}

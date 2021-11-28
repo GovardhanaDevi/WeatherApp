@@ -30,6 +30,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Hqu-ie-HyQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="UpW-qL-zDO"/>
                     <constraint firstItem="Hqu-ie-HyQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="iQB-sU-c1l"/>
@@ -38,6 +39,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="hoursCollectionView" destination="Hqu-ie-HyQ" id="Mg0-e8-F3C"/>
             </connections>
