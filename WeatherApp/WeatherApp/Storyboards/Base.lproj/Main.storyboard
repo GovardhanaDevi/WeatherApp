@@ -46,6 +46,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Simple Weather" id="l3n-kl-8Vf"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="aRm-jm-Qdn" id="7pS-m3-Dbp"/>
+                        <outlet property="tableView" destination="scE-8T-xA7" id="Qn9-Wo-qVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,6 +63,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="RFX-QY-v1b">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

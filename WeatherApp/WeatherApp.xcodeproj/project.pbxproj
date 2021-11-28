@@ -18,6 +18,7 @@
 		489D65E52753D3E200ED8668 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D65E42753D3E200ED8668 /* APICaller.swift */; };
 		489D65E82753D42A00ED8668 /* cities_20000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 489D65E72753D42A00ED8668 /* cities_20000.csv */; };
 		489D65EB2753D4EF00ED8668 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D65EA2753D4EF00ED8668 /* Utility.swift */; };
+		489D65ED2753D7E100ED8668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489D65EC2753D7E100ED8668 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		489D65E42753D3E200ED8668 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		489D65E72753D42A00ED8668 /* cities_20000.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cities_20000.csv; sourceTree = "<group>"; };
 		489D65EA2753D4EF00ED8668 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		489D65EC2753D7E100ED8668 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				489D65C82753D1AE00ED8668 /* AppDelegate.swift */,
 				489D65CA2753D1AE00ED8668 /* SceneDelegate.swift */,
 				489D65EA2753D4EF00ED8668 /* Utility.swift */,
+				489D65EC2753D7E100ED8668 /* Constants.swift */,
 				489D65E92753D43C00ED8668 /* Service */,
 				489D65E22753D36100ED8668 /* Model */,
 				489D65DF2753D34900ED8668 /* ViewModel */,
@@ -209,6 +212,7 @@
 				489D65C92753D1AE00ED8668 /* AppDelegate.swift in Sources */,
 				489D65CB2753D1AE00ED8668 /* SceneDelegate.swift in Sources */,
 				489D65E12753D35D00ED8668 /* WeatherModel.swift in Sources */,
+				489D65ED2753D7E100ED8668 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
