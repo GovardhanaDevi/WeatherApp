@@ -27,13 +27,23 @@ extension Date {
     }
 }
 
+let imageCache = NSCache<AnyObject, AnyObject>()
+
 extension UIImageView {
     func setImage(with iconName: String) {
         guard let url = URL(string: "http://openweathermap.org/img/wn/\(iconName)@2x.png") else {return}
+        
+        if let imageFromCache = imageCache.object(forKey: url as AnyObject) as? UIImage {
+            self.image = imageFromCache
+            return
+        }
+
         DispatchQueue.global(qos: .background).async {
             guard let data = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {
-                self.image = UIImage(data: data)
+                guard let imageToCache = UIImage(data: data) else { return }
+                self.image = imageToCache
+                imageCache.setObject(imageToCache, forKey: url as AnyObject)
             }
         }
         
