@@ -7,19 +7,26 @@
 
 import Foundation
 
-class APICaller {
-    static func getWeather(latitude: String, longitude: String,
-                    completionHandler: @escaping (WeatherModel?, String?) -> Void) {
+enum CustomError {
+    case invalidURL
+    case emptyData
+    case serverError(String)
+}
 
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&exclude=minutely&APPID=2a9a0070660b017f7c6aa9040bf6061a") else {
-            completionHandler(nil, "invalidURL")
+class APICaller {
+    static let apiKey = "2a9a0070660b017f7c6aa9040bf6061a"
+    static func getWeather(latitude: String, longitude: String,
+                    completionHandler: @escaping (WeatherModel?, CustomError?) -> Void) {
+
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&exclude=minutely&APPID=\(APICaller.apiKey)") else {
+            completionHandler(nil, .invalidURL)
             return }
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 if let error = error {
-                    completionHandler(nil, error.localizedDescription)
+                    completionHandler(nil, .serverError(error.localizedDescription))
                 } else {
-                    completionHandler(nil, "Empty Data")
+                    completionHandler(nil, .emptyData)
                 }
                 return
             }
@@ -30,7 +37,7 @@ class APICaller {
                 
                 completionHandler(weatherModel, nil)
             } catch {
-                completionHandler(nil, "Empty Data")
+                completionHandler(nil, .emptyData)
             }
         }
         task.resume()
